@@ -31,3 +31,8 @@ println()
 println("What is your name?")
 person_name = readline()
 println("Your name is " * person_name)
+
+# TODO: "is" functions
+# isascii
+# isspace
+# isdigit
