@@ -1,5 +1,6 @@
 # import system
 # import STDIN
+# import System
 # An IF-ELSE statement
 
 x = 5
@@ -10,16 +11,22 @@ else
 end
 
 print("Enter a number: ")
-# input_value = readline(STDIN)
-input_value = "97.1"
-num = parse(Float64, input_value)
-println()
-if num > 95
-    println("Grade: A")
-elseif num > 90
-    println("Grade: B")
-elseif num > 80
-    println("Grade: C")
-else
-    println("FAIL")
-end
+input_value = readline()
+# println(input_value)
+# println(typeof(input_value))
+
+new_value = parse(Float64, input_value)
+println(typeof(new_value))
+
+# input_value = "97.1"
+# num = parse(Float64, input_value)
+# println()
+# if num > 95
+#     println("Grade: A")
+# elseif num > 90
+#     println("Grade: B")
+# elseif num > 80
+#     println("Grade: C")
+# else
+#     println("FAIL")
+# end
