@@ -30,7 +30,8 @@ println()
 
 println("What is your name?")
 person_name = readline()
-println("Your name is " * person_name)
+j = "What?"
+print("Your name is ", person_name)
 
 # TODO: "is" functions
 # isascii
