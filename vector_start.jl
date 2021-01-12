@@ -1,5 +1,5 @@
 
-# TODO: dot operator
+# TODO: Julia dot operator
 array1 = [1, 2, 3, 4, 5]
 println(array1)
 
