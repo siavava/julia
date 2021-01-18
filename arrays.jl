@@ -23,7 +23,7 @@ arr6 = fill(5, 7)   # fill with 7 instances of number 5
 println(arr6)
 
 # TODO sort 
-newarr = sort(arr, rev = true)
+newarr = sort!(arr, rev = true)
 println(newarr)
 
 # TODO convert to string with delimiter character
