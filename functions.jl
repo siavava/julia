@@ -30,13 +30,27 @@ println(result)
 # Variable argument functions
 function summit(args...)
     sum = 0
-    for a in args
-        sum += a
+    for item in args
+        if item isa Array
+            for number in item
+                sum += number
+            end
+        else
+            sum += item
+        end
     end
     return sum  #must use return statement
 end
 
 println(summit(1, 2, 3, 4, 5, 6, 7, 8, 9))
+list = []
+for i in 1:100
+    push!(list, i)
+end
+
+hundred = summit(list, 1000)
+println(hundred)
+
 
 quotient(a, b) = (a/b)
 
