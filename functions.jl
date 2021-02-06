@@ -16,7 +16,7 @@ println(foo(1, 2))
 
 println(foo(1, 2, 5))
 
-function bar(a, b; multiplier = 10) #keyword arguments must be explicitly set & called
+function bar(a, b; multiplier=10) #keyword arguments must be explicitly set & called
     (a + b) * multiplier
 end
 
@@ -39,6 +39,10 @@ function summit(args...)
             sum += item
         elseif item isa String
             print(item, " is not a number \n")
+        elseif item isa Bool
+            if item
+                sum/=10
+            end
         end
     end
     return sum  #must use return statement
@@ -50,7 +54,7 @@ for i in 1:100
     push!(list, i)
 end
 
-hundred = summit(list, 1000, "Amittai")
+hundred = summit(list, 1000, "Amittai", true)
 println(hundred)
 
 
