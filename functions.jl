@@ -35,8 +35,10 @@ function summit(args...)
             for number in item
                 sum += number
             end
-        else
+        elseif item isa Int
             sum += item
+        elseif item isa String
+            print(item, " is not a number \n")
         end
     end
     return sum  #must use return statement
@@ -48,7 +50,7 @@ for i in 1:100
     push!(list, i)
 end
 
-hundred = summit(list, 1000)
+hundred = summit(list, 1000, "Amittai")
 println(hundred)
 
 
