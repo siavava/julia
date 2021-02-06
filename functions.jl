@@ -23,7 +23,7 @@ end
 println(bar(100, 2, multiplier = 5))
 
 # SHorthand function definitions
-myfunc(x, y) = (a = x - 1; 2a + y) 
+myfunc(x, y) = (a = x - 1; 2a + y)
 result = myfunc(3, 4)
 println(result)
 
@@ -31,9 +31,17 @@ println(result)
 function summit(args...)
     sum = 0
     for a in args
-        sum += a 
+        sum += a
     end
     return sum  #must use return statement
 end
 
 println(summit(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+quotient(a, b) = (a/b)
+
+println(quotient(2, 5))
+
+factoriall(x, y) = (x % y)
+
+println(factoriall(259475925, 37))
