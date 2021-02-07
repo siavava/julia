@@ -29,11 +29,12 @@ println(result)
 
 # Variable argument functions
 function summit(args...)
-    sum = 0
+    sum::Float64 = 0
     for item in args
         if item isa Array
-            for number in item
-                sum += number
+            for num in item
+                sum+=summit(num)
+                # sum += number
             end
         elseif item isa Int
             sum += item
@@ -54,7 +55,7 @@ for i in 1:100
     push!(list, i)
 end
 
-hundred = summit(list, 1000, "Amittai", true)
+hundred = summit(list, 1000,"aha", 17000, [1, 5, "test", 2, 4, 6, 7, 3, 3, 2], "Amittai", true)
 println(hundred)
 
 
