@@ -34,7 +34,6 @@ function summit(args...)
         if item isa Array
             for num in item
                 sum+=summit(num)
-                # sum += number
             end
         elseif item isa Int
             sum += item
@@ -66,3 +65,14 @@ println(quotient(2, 5))
 factoriall(x, y) = (x % y)
 
 println(factoriall(259475925, 37))
+
+a = 4 + 3im
+b = conj(a)
+c = cis(pi)
+println(+(1, 2, 3, 4, 5))
+println(2 > 3 && println("I'm lazy"))
+
+z = NaN
+if isnan(z)
+    println(z)
+end
