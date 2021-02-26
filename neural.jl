@@ -6,29 +6,36 @@ using Statistics
 export Network, setup, train!, predict!
 
 mutable struct Network
-    a::Array{Any,1}
-    W::Array{Any,1}
-    b::Array{Any,1}
-    epsilon::Float64
-    result::Array
+    a::Array{Any,1}     # inputs
+    W::Array{Any,1}     # weights
+    b::Array{Any,1}     # error correction
+    epsilon::Float64    #
+    result::Array       # outcomes
 end
 
+# TODO: Important functions we'll need in out Neural Network
+
+#1 sigmoid function
 function sigmoid(x)
     1 ./ (1 .+ exp.(-x))
 end
 
+# sigmoid derivative
 function sigmoid_derivative(x)
     x .* (1 .- x)
 end
 
+# tanh function
 function tanh(x)
     (exp.(x) - exp.(-x)) / (exp.(x) + exp.(-x))
 end
 
+# tanh derivative
 function tanh_derivative(x)
     1 - x.^2
 end
 
+# setup of neural network
 function setup(input_size, hidden_sizes, output_size, epsilon=0.01)
     sizes = [input_size hidden_sizes output_size]
 
@@ -45,6 +52,7 @@ function setup(input_size, hidden_sizes, output_size, epsilon=0.01)
    return Network([], W, b, epsilon, [])
 end
 
+# forward propagation
 function forward!(network::Network, X)
     network.a = [X]
     for i = 1:length(network.W)
@@ -56,6 +64,7 @@ function forward!(network::Network, X)
     return network
 end
 
+# backward propagation
 function backward!(network::Network, X, y)
     error = y - network.result
     delta = error .* sigmoid_derivative(network.result)
@@ -77,6 +86,7 @@ function backward!(network::Network, X, y)
     return network
 end
 
+# training routine
 function train!(network::Network, X, y, n=1000)
     for i = 1:n
         forward!(network, X)
@@ -84,6 +94,7 @@ function train!(network::Network, X, y, n=1000)
     end
 end
 
+# prediction !!
 function predict!(network::Network, XP)
     forward!(network, XP)
 end
