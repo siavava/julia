@@ -88,14 +88,19 @@ end
 
 # training routine
 function train!(network::Network, X, y, n=1000)
+    # For each data point;
     for i = 1:n
+        # Step 1: forward-propagate to get predictions
         forward!(network, X)
+
+        # Step 2: backpropagate to update model
         backward!(network, X, y)
     end
 end
 
 # prediction !!
 function predict!(network::Network, XP)
+    # Forward propagate through network to get predictions
     forward!(network, XP)
 end
 
