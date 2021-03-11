@@ -55,7 +55,7 @@ end
 
 function exponential_sequence_example()
     input_size = 1
-    hidden_sizes = [100 200 100]
+    hidden_sizes = [100 200 500 200 100]
     output_size = 1
 
     sequence = collect(0:0.1:9.9)
@@ -96,7 +96,7 @@ function normal_sequence_example()
 
     network = setup(input_size, hidden_sizes, output_size)
     train!(network, X, y, 10000)
-    nn_plot = plot_predictions(network, X, y, X_scale, y_scale, "Normally Distributed Sequence")
+    nn_plot = plot_predictions(network, X, y, X_scale, y_scale, "Noisy Sequence")
     display(nn_plot)
 end
 
@@ -124,6 +124,7 @@ function decision_boundary_example()
     input_size = 2
     hidden_sizes = [10 20 30 20 10]
     output_size = 1
+    # hidden_sizes = [1]
 
     X = randn((100, 2))
     y = zeros((100, 1))
@@ -142,8 +143,8 @@ function decision_boundary_example()
     display(nn_plot)
 end
 
-# exponential_sequence_example()
-normal_sequence_example()
+exponential_sequence_example()
+# normal_sequence_example()
 # random_sequence_example()
 # decision_boundary_example()
 end
