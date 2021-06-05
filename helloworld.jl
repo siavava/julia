@@ -1,14 +1,14 @@
 function helloworld()
-    println("Hello, world!")
+  println("Hello, world!")
 end
 
 helloworld()
 
 
 function helloworld(count::Int)
-    for i in 1:count
-        println("Hello world ", i)
-    end
+  for i in 1:count
+    println("Hello world ", i)
+  end
 end
 
 helloworld()
@@ -22,7 +22,7 @@ initial = "J"
 boolval = true
 array1 = [first, second, stringvar, initial, boolval]
 for item in array1
-    println(item)
+  println(item)
 end
 # print(first, second, stringvar, initial, boolval)
 
@@ -30,7 +30,7 @@ end
 const MEANING_OF_LIFE = "Happiness"
 println(MEANING_OF_LIFE)
 
-MEANING_OF_LIFE = "Money!"
+# MEANING_OF_LIFE = "Money!"
 println(MEANING_OF_LIFE)
 
 a = Int16(-200)

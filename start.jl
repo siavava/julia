@@ -1,4 +1,4 @@
-function hey():
+function hey()
     print("Hello, world!")
 
 function helloworld()
