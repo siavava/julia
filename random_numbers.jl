@@ -7,6 +7,6 @@ end
 
 # TODO pick a random number between 0 and 1
 for i in 1:10
-    # println(rand())
+    println(rand())
     println(((rand() - 0.5) * 10) + 5)
 end
