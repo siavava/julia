@@ -29,3 +29,9 @@ println(newarr)
 # TODO convert to string with delimiter character
 strval = join(arr, "-")
 println(strval)
+
+𝜜 = "α"
+println(α̂)
+
+
+
