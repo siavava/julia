@@ -1,3 +1,6 @@
+#usr/bin/env julia
+# -*- coding: utf-8 -*-
+
 function helloworld()
   println("Hello, world!")
 end

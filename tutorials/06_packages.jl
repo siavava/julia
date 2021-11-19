@@ -1,0 +1,4 @@
+using examples
+
+hello("Amittai")
+
